@@ -1,10 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  FormControl,
-  FormGroup,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { LoginService } from '../_services/login.service';
 
 @Component({
@@ -13,11 +9,12 @@ import { LoginService } from '../_services/login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  errorMessage: string = '';
+  isLoginFailed: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
   ) {}
-  @Input() error: string | null | undefined;
 
   public loginForm = this.formBuilder.group({
     username: ['', [Validators.email, Validators.required]],
@@ -25,12 +22,20 @@ export class LoginComponent implements OnInit {
   });
 
   submit() {
+    this.isLoginFailed = false;
     let username = this.loginForm.controls['username'].value;
     let password = this.loginForm.controls['password'].value;
     this.loginService
       .login(username ? username : '', password ? password : '')
-      .subscribe((resp) => {});
+      .subscribe({
+        next: (v: any) => {
+          localStorage.setItem('jwt-token', v.token);
+        },
+        error: (e) => {
+          this.isLoginFailed = true;
+          this.errorMessage = 'Please check username and password.';
+        },
+      });
   }
-
   ngOnInit(): void {}
 }
