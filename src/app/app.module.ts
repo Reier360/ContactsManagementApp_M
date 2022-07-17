@@ -13,6 +13,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,14 +22,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ContactListComponent } from './customers/contact-list/contact-list.component';
-import { ContactAddComponent } from './customers/contact-add/contact-add.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { ContactAddComponent } from './contacts/contact-add/contact-add.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ContactDataTableComponent } from './customers/contact-data-table/contact-data-table.component';
-import { ContactEditComponent } from './customers/contact-edit/contact-edit.component';
+import { ContactDataTableComponent } from './contacts/contact-data-table/contact-data-table.component';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { ContactEditComponent } from './customers/contact-edit/contact-edit.comp
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

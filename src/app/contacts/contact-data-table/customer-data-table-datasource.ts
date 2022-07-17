@@ -1,7 +1,4 @@
 import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { catchError, map } from 'rxjs/operators';
 import { Observable, BehaviorSubject, forkJoin } from 'rxjs';
 import { CustomerService } from 'src/app/_services/customer.service';
 import { CustomerList } from 'src/app/interfaces/customer/customer-list';

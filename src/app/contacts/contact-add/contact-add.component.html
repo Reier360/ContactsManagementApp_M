@@ -1,0 +1,77 @@
+<mat-card class="box"
+  >Contact Details
+  <form [formGroup]="form" (ngSubmit)="add()">
+    <p>
+      <mat-form-field appearance="fill">
+        <input
+          required
+          type="text"
+          matInput
+          placeholder="Name"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <input
+          type="text"
+          matInput
+          placeholder="Surname"
+          formControlName="surname"
+          required
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <input
+          required
+          type="number"
+          matInput
+          placeholder="Telephone Number"
+          formControlName="telephoneNumber"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <input
+          required
+          type="email"
+          matInput
+          placeholder="email"
+          formControlName="email"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input
+          required
+          matInput
+          formControlName="dateOfBirth"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+    <div class="form-group">
+      <!-- <div *ngIf="isLoginFailed" class="error">
+          Login failed: {{ errorMessage }}
+        </div> -->
+    </div>
+
+    <div class="button">
+      <a routerLink="/contacts" mat-button>Cancel</a>
+      <button type="submit" [disabled]="!form.valid" mat-button>Add</button>
+    </div>
+  </form>
+</mat-card>
