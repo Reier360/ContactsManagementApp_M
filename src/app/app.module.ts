@@ -22,9 +22,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CustomerDataTableComponent } from './customers/customer-data-table/customer-data-table.component';
+import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, MainNavComponent, CustomerListComponent, CustomerAddComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    MainNavComponent,
+    CustomerListComponent,
+    CustomerAddComponent,
+    CustomerDataTableComponent,
+    CustomerEditComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,6 +56,10 @@ import { CustomerAddComponent } from './customers/customer-add/customer-add.comp
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
