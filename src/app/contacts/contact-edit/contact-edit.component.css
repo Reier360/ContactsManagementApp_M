@@ -19,3 +19,7 @@ mat-form-field {
 .success {
   color: green;
 }
+
+.mat-stroked-button {
+  margin: 2px !important;
+}

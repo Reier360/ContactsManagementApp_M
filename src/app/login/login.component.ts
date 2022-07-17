@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../_services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   isLoginFailed: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) {}
 
   public loginForm = this.formBuilder.group({
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
       .subscribe({
         next: (v: any) => {
           localStorage.setItem('jwt-token', v.token);
+          window.location.href = '/contacts';
         },
         error: (e) => {
           this.isLoginFailed = true;

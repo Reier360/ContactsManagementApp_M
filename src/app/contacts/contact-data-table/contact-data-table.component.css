@@ -17,3 +17,15 @@
 .error {
   color: red;
 }
+
+.mat-stroked-button {
+  margin: 2px !important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.actions-width {
+  width: 180px;
+}

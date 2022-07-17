@@ -11,7 +11,8 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a routerLink="/contacts">Contacts</a>
-      <a routerLink="/login">Login</a>
+      <a *ngIf="hasToken" routerLink="/contacts">Contacts</a>
+      <a *ngIf="hasToken" routerLink="" (click)="logout()">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -27,8 +28,8 @@
       </button>
       <span>Contacts Management</span>
       <span class="spacer"></span>
-      <a routerLink="/contacts">Contacts</a>
-      <a routerLink="/login">Login</a>
+      <a *ngIf="hasToken" routerLink="/contacts">Contacts</a>
+      <a *ngIf="hasToken" (click)="logout()">Logout</a>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

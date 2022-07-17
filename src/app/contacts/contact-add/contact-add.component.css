@@ -11,3 +11,7 @@ mat-form-field {
   display: flex;
   justify-content: flex-end;
 }
+
+.mat-stroked-button {
+  margin: 2px !important;
+}

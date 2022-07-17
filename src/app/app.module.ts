@@ -21,7 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactAddComponent } from './contacts/contact-add/contact-add.component';
 import { MatTableModule } from '@angular/material/table';
@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ContactDataTableComponent } from './contacts/contact-data-table/contact-data-table.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 import { DialogConfirmComponent } from './shared/dialog/dialog-confirm/dialog-confirm.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,9 @@ import { DialogConfirmComponent } from './shared/dialog/dialog-confirm/dialog-co
     MatNativeDateModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
