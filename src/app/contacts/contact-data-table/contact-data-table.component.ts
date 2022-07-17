@@ -6,6 +6,7 @@ import { CustomerList } from 'src/app/interfaces/customer/customer-list';
 import { CustomerService } from 'src/app/_services/customer.service';
 import { CustomerDataTableDataSource } from './customer-data-table-datasource';
 import { merge, tap } from 'rxjs';
+import { DialogService } from 'src/app/shared/dialog/dialog.service';
 
 @Component({
   selector: 'app-contact-data-table',
@@ -29,7 +30,10 @@ export class ContactDataTableComponent implements AfterViewInit {
     'actions',
   ];
 
-  constructor(private customerService: CustomerService) {
+  constructor(
+    private customerService: CustomerService,
+    private dialogService: DialogService
+  ) {
     this.dataSource = new CustomerDataTableDataSource(customerService);
     this.dataSource.loadContacts();
   }
@@ -54,5 +58,23 @@ export class ContactDataTableComponent implements AfterViewInit {
     );
   }
 
-  editContact(id: number) {}
+  deleteContact(id: number) {
+    this.dialogService
+      .confirmDialog({
+        title: 'Are you sure?',
+        message: 'Are you sure you want to do delete this contact?',
+        confirmCaption: 'Yes',
+        cancelCaption: 'No',
+      })
+      .subscribe((yes) => {
+        this.customerService.delete(id).subscribe({
+          next: (v: any) => {
+            this.loadLessonsPage();
+          },
+          error: (e) => {
+            //this.errorMessage = 'Error saving contact.';
+          },
+        });
+      });
+  }
 }

@@ -28,8 +28,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { ContactDataTableComponent } from './contacts/contact-data-table/contact-data-table.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { DialogConfirmComponent } from './shared/dialog/dialog-confirm/dialog-confirm.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     ContactAddComponent,
     ContactDataTableComponent,
     ContactEditComponent,
+    DialogConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,7 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     MatProgressSpinnerModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
