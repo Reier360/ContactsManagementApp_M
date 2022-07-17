@@ -2,6 +2,7 @@
   <mat-sidenav
     #drawer
     class="sidenav"
+    [ngClass]="{ hidden: !(isHandset$ | async) }"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -23,7 +24,10 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>ContactsManagementApp</span>
+      <span>Contacts Management</span>
+      <span class="spacer"></span>
+      <a href="#">Login</a>
+      <a href="#">Contacts</a>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
