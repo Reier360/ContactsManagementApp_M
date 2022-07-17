@@ -20,24 +20,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomerListComponent } from './customers/customer-list/customer-list.component';
-import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
+import { ContactListComponent } from './customers/contact-list/contact-list.component';
+import { ContactAddComponent } from './customers/contact-add/contact-add.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { CustomerDataTableComponent } from './customers/customer-data-table/customer-data-table.component';
-import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
+import { ContactDataTableComponent } from './customers/contact-data-table/contact-data-table.component';
+import { ContactEditComponent } from './customers/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainNavComponent,
-    CustomerListComponent,
-    CustomerAddComponent,
-    CustomerDataTableComponent,
-    CustomerEditComponent,
+    ContactListComponent,
+    ContactAddComponent,
+    ContactDataTableComponent,
+    ContactEditComponent,
   ],
   imports: [
     BrowserModule,

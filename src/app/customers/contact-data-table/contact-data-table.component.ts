@@ -8,11 +8,11 @@ import { CustomerDataTableDataSource } from './customer-data-table-datasource';
 import { merge, tap } from 'rxjs';
 
 @Component({
-  selector: 'app-customer-data-table',
-  templateUrl: './customer-data-table.component.html',
-  styleUrls: ['./customer-data-table.component.css'],
+  selector: 'app-contact-data-table',
+  templateUrl: './contact-data-table.component.html',
+  styleUrls: ['./contact-data-table.component.css'],
 })
-export class CustomerDataTableComponent implements AfterViewInit {
+export class ContactDataTableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<CustomerList>;

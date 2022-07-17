@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
-import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+import { ContactAddComponent } from './customers/contact-add/contact-add.component';
+import { ContactListComponent } from './customers/contact-list/contact-list.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -9,15 +9,15 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'contacts',
-    component: CustomerListComponent,
+    component: ContactListComponent,
   },
   {
     path: 'contacts/add',
-    component: CustomerAddComponent,
+    component: ContactAddComponent,
   },
   {
     path: 'contacts/edit',
-    component: CustomerListComponent,
+    component: ContactListComponent,
   },
 ];
 
