@@ -1,3 +1,18 @@
 .heigh-full {
   height: 100%;
 }
+
+.card-styles {
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.mat-card {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.mat-card-title {
+  padding: 10px;
+}

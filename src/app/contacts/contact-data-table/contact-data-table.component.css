@@ -1,10 +1,15 @@
 .table-styles {
-  width: 80%;
+  width: 100%;
   margin: auto;
-  margin-top: 10px;
 }
 
 .paginator-style {
-  width: 80%;
+  width: 100%;
   margin: auto;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

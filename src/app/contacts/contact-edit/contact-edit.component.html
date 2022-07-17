@@ -1,1 +1,89 @@
-<p>customer-edit works!</p>
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>Contact Edit</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          required
+          type="text"
+          matInput
+          placeholder="Name"
+          formControlName="name"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Surname"
+          formControlName="surname"
+          required
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone Number</mat-label>
+        <input
+          required
+          type="number"
+          matInput
+          placeholder="Telephone Number"
+          formControlName="telephoneNumber"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Email Address</mat-label>
+        <input
+          required
+          type="email"
+          matInput
+          placeholder="Email Address"
+          formControlName="emailAddress"
+        />
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input
+          required
+          matInput
+          formControlName="dateOfBirth"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+    <div class="form-group">
+      <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div *ngIf="successMessage" class="success">
+        {{ successMessage }}
+      </div>
+    </div>
+
+    <div class="button">
+      <a routerLink="/contacts" mat-button>Cancel</a>
+      <button type="submit" [disabled]="!form.valid" mat-button>Save</button>
+    </div>
+  </form>
+</mat-card>

@@ -26,6 +26,7 @@ export class ContactDataTableComponent implements AfterViewInit {
     'telephoneNumber',
     'emailAddress',
     'dateOfBirth',
+    'actions',
   ];
 
   constructor(private customerService: CustomerService) {
@@ -34,7 +35,6 @@ export class ContactDataTableComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    debugger;
     // reset the paginator after sorting
     this.sort.sortChange.subscribe(() => (this.paginator.pageIndex = 0));
 
@@ -53,4 +53,6 @@ export class ContactDataTableComponent implements AfterViewInit {
       this.paginator.pageSize
     );
   }
+
+  editContact(id: number) {}
 }

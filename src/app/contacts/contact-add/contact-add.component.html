@@ -1,8 +1,11 @@
-<mat-card class="box"
-  >Contact Details
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>Contact Add</mat-card-title>
+  </mat-card-header>
   <form [formGroup]="form" (ngSubmit)="add()">
     <p>
       <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
         <input
           required
           type="text"
@@ -15,6 +18,7 @@
 
     <p>
       <mat-form-field appearance="fill">
+        <mat-label>Surname</mat-label>
         <input
           type="text"
           matInput
@@ -27,6 +31,7 @@
 
     <p>
       <mat-form-field appearance="fill">
+        <mat-label>Telephone Number</mat-label>
         <input
           required
           type="number"
@@ -39,19 +44,20 @@
 
     <p>
       <mat-form-field appearance="fill">
+        <mat-label>Email Address</mat-label>
         <input
           required
           type="email"
           matInput
-          placeholder="email"
-          formControlName="email"
+          placeholder="Email Address"
+          formControlName="emailAddress"
         />
       </mat-form-field>
     </p>
 
     <p>
       <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
+        <mat-label>Date of Birth</mat-label>
         <input
           required
           matInput
@@ -64,9 +70,9 @@
     </p>
 
     <div class="form-group">
-      <!-- <div *ngIf="isLoginFailed" class="error">
-          Login failed: {{ errorMessage }}
-        </div> -->
+      <div *ngIf="errorMessage" class="error">
+        Add failed: {{ errorMessage }}
+      </div>
     </div>
 
     <div class="button">
