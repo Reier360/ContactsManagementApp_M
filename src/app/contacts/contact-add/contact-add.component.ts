@@ -9,6 +9,7 @@ import { CustomerService } from 'src/app/_services/customer.service';
 })
 export class ContactAddComponent implements OnInit {
   errorMessage: string = '';
+  successMessage: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,8 +44,10 @@ export class ContactAddComponent implements OnInit {
         dateOfBirth: dateOfBirth,
       })
       .subscribe({
-        next: (v: any) => {},
-        error: (e) => {
+        next: () => {
+          this.successMessage = 'Contact saved successfully.';
+        },
+        error: () => {
           this.errorMessage = 'Error adding contact.';
         },
       });
